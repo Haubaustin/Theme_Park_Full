@@ -1,0 +1,162 @@
+.About > p {
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.About > h1 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.App {
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.267);
+}
+
+.AppMain {
+  min-height: calc(100vh - 88px);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.App > div:nth-child(1) {                   /*Header*/
+  background: rgb(29,27,138);
+  background: linear-gradient(0deg, rgba(29,27,138,1) 0%, rgba(0,0,0,1) 100%);
+  height: 50px;
+  border-bottom: 4px solid black;
+  
+}
+
+.App > div:nth-child(1) > span {            /*Title*/
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  left: 5px;
+  font-family: 'Dela Gothic One', cursive;
+}
+
+.App > div:nth-child(1) > a:nth-child(2) {  /*Home Button*/
+  margin: 0 20px 0 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  font-size: 25px;
+}
+
+.App > div:nth-child(1) > a:nth-child(3) {  /*About Button*/
+  margin: 0 10px 0 20px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 25px;
+}
+
+.App > div:nth-child(1) > a:hover {
+  transition: transform 300ms;
+  transform: translateY(-2px);
+}
+
+a.linkedin {                                /*Footer Icon*/
+  color: rgba(162, 162, 165, 0.795);
+  margin: 25px 10px 0 10px;
+  transition: transform 300ms;
+}
+
+a > svg:hover {
+  transform: translateY(-2px);
+}
+
+a > svg:active {
+  transform: translateY(2px);
+}
+
+button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(#464d55, #25292e);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 12px;
+  height: 25px;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 150ms;
+  vertical-align: baseline;
+}
+
+button:hover {
+  box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+  opacity: .85;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.Deals {                                   
+  display: inline-block;
+  height: 150px;
+  margin: 10px;
+}
+
+.dDisplay {
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin-bottom: 20px;
+  border-bottom: 3px solid black;
+}
+
+.dDisplay::-webkit-scrollbar {
+  background: none;
+}
+
+.dDisplay::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.678);
+  border-radius: 20px;
+}
+
+.dDisplay::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(14, 1, 1, 0.767);
+}
+
+.Footer {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(29,27,138,1) 100%);
+  border-top: 2px solid black;  
+  height: 34px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+form > input {
+  background-color: rgba(128, 128, 128, 0.021);
+  border: none;
+  border-bottom: 3px solid black;
+  color: black;
+  margin-bottom: 10px;
+}
+
+form > input:focus {
+  outline: 0;
+}
+
+form > input::placeholder::cue(click) {
+  transform: translateX(-100px);
+}
+

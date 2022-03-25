@@ -1,0 +1,3 @@
+# added gitignore file and /node_modules - ES
+/node_modules
+.DS_Store
