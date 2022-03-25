@@ -59,6 +59,7 @@ app.get('/rides', async (req, res) => {
   
   app.get('/*', (req, res) => {
     res.sendFile(`${__dirname}/Client/build/index.html`)
+
    })
   app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 

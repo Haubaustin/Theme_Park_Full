@@ -1,5 +1,4 @@
-
-const { Park, Ride, Comment } = require("../models/park");
+const { Park, Ride, Comment } = require("../models");
 
 const addComment = async (req, res) => {
     try {
@@ -17,7 +16,7 @@ const addComment = async (req, res) => {
 
 const getAllParks = async (req, res) => {
     try {
-        const parks = await Park.find()
+        const parks = await Park.find({})
         return res.status(200).json({ parks })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -26,12 +25,34 @@ const getAllParks = async (req, res) => {
 
 const getParkById = async (req, res) => {
     try {
-        const { id } = req.params;
+        const {id} = req.params;
         const parks = await Park.findById(id)
-        if (park) {
-            return res.status(200).json({ park });
+        if (parks) {
+            return res.status(200).json({ parks });
         }
         return res.status(404).send('Park with the specified ID does not exists');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const getAllRides = async (req, res) => {
+    try {
+        const rides = await Ride.find({})
+        return res.status(200).json({ rides })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const getRideById = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const parks = await Ride.findById(id)
+        if (parks) {
+            return res.status(200).json({ rides });
+        }
+        return res.status(404).send('Ride with the specified ID does not exists');
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -41,5 +62,7 @@ const getParkById = async (req, res) => {
 module.exports = {
     addComment,
     getParkById,
-    getAllParks
+    getAllParks,
+    getRideById,
+    getAllRides
 }
