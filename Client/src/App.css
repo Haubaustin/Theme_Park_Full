@@ -160,3 +160,11 @@ form > input::placeholder::cue(click) {
   transform: translateX(-100px);
 }
 
+.searchResults > a {
+  text-decoration: none;
+}
+
+#root > div > div.AppMain > div > section > a > div > img {
+  height: 200px;
+  width: 200px;
+}

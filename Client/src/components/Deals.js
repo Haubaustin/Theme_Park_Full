@@ -5,6 +5,7 @@ const Deals = (props) => {
         <div className='Deals'>
         <h1>Hot deals!</h1>
         <h5>{props.name}</h5>
+        {/* <h5>{props.desc}</h5> */}
 
         </div>
     )

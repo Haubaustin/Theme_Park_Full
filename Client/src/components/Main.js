@@ -6,6 +6,7 @@ import target from '../data/target'
 import ParkCard from "./ParkCard";
 import BudgetCard from './BudgetCard'
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -18,7 +19,8 @@ const Main = () => {
     const getSearchResults = async (e) => {
         setSearching(true)
         e.preventDefault()
-        setSearchResults(dummy)
+        const parks = await axios.get("http://localhost:3001/parks")
+        setSearchResults(parks.data)
         setSearchQuery('')
     }
 
@@ -34,8 +36,9 @@ const Main = () => {
     }
 
     useEffect(() => {
-        const getDealResults = () => {
-            setDealsResults(dummy)
+        const getDealResults = async () => {
+            const rides = await axios.get("http://localhost:3001/rides")
+            setDealsResults(rides.data)
         }
         getDealResults()
     },[])
@@ -48,7 +51,7 @@ const Main = () => {
         <div>
             <div className="dDisplay">
             {deals.map((res) => (
-        <Deals key={res.id} name={res.parkName} />
+        <Deals key={res._id} name={res.title} desc={res.description} />
             ))}
             </div>
         <SearchBar 
@@ -62,8 +65,8 @@ const Main = () => {
         <h2>Search Results</h2>
         <section className="searchResults">
             {searching && searchResults.map((result) => (
-                <Link to={`parks/${result.id}`}>
-                <ParkCard key={result.id} name={result.parkName} price={result.parkPrice} />
+                <Link to={`parks/${result._id}`}>
+                <ParkCard key={result._id} name={result.name} price={result.avg_price} img={result.image} location={result.location} />
                 </Link>
             ))}
             {!searching && budgetResults.map((result) => (
